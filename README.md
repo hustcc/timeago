@@ -1,18 +1,20 @@
 # timeago
 
-A python lib format datetime to `*** time ago` statement.
+A very simple python lib, used to format datetime with `*** time ago` statement.
 
 [![Build Status](https://travis-ci.org/hustcc/timeago.svg?branch=master)](https://travis-ci.org/hustcc/timeago) [![PyPi Status](https://img.shields.io/pypi/v/timeago.svg)](https://pypi.python.org/pypi/timeago) [![Python Versions](https://img.shields.io/pypi/pyversions/timeago.svg)](https://pypi.python.org/pypi/timeago) [![PyPi Downloads](https://img.shields.io/pypi/dm/timeago.svg)](https://pypi.python.org/pypi/timeago)
 
 Such as: 
 
-> just now
-> 12 seconds ago
-> 3 minutes ago
-> 2 hours ago
-> 24 days ago
-> 6 months ago
-> 2 years ago
+```
+just now
+12 seconds ago
+3 minutes ago
+2 hours ago
+24 days ago
+6 months ago
+2 years ago
+```
 
 or Chinese locale statement.
 
