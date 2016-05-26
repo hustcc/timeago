@@ -13,7 +13,7 @@ from timeago.setting import SECONDS, MINUTE_SECONDS, HOUR_SECONDS, DAY_SECONDS, 
 from timeago.locales import timeago_template
 from timeago.excepts import ParameterUnvalid
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __license__ = 'MIT'
 __ALL__ = ['format']
 

@@ -77,43 +77,43 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(date, now, locale), u'刚刚')
         
         now = date + datetime.timedelta(seconds = 10)
-        self.assertEqual(timeago.format(date, now, locale), u'10 秒前')
+        self.assertEqual(timeago.format(date, now, locale), u'10秒前')
         
         now = date + datetime.timedelta(seconds = 12)
-        self.assertEqual(timeago.format(date, now, locale), u'12 秒前')
+        self.assertEqual(timeago.format(date, now, locale), u'12秒前')
         
         now = date + datetime.timedelta(seconds = 60)
-        self.assertEqual(timeago.format(date, now, locale), u'1 分钟前')
+        self.assertEqual(timeago.format(date, now, locale), u'1分钟前')
         
         now = date + datetime.timedelta(seconds = 60 * 3.4)
-        self.assertEqual(timeago.format(date, now, locale), u'3 分钟前')
+        self.assertEqual(timeago.format(date, now, locale), u'3分钟前')
         
         now = date + datetime.timedelta(seconds = 3600)
-        self.assertEqual(timeago.format(date, now, locale), u'1 小时前')
+        self.assertEqual(timeago.format(date, now, locale), u'1小时前')
         
         now = date + datetime.timedelta(seconds = 3600 * 2)
-        self.assertEqual(timeago.format(date, now, locale), u'2 小时前')
+        self.assertEqual(timeago.format(date, now, locale), u'2小时前')
         
         now = date + datetime.timedelta(seconds = 86400)
-        self.assertEqual(timeago.format(date, now, locale), u'1 天前')
+        self.assertEqual(timeago.format(date, now, locale), u'1天前')
         
         now = date + datetime.timedelta(seconds = 86400 * 4.5)
-        self.assertEqual(timeago.format(date, now, locale), u'4 天前')
+        self.assertEqual(timeago.format(date, now, locale), u'4天前')
         
         now = date + datetime.timedelta(seconds = 2592000)
-        self.assertEqual(timeago.format(date, now, locale), u'1 月前')
+        self.assertEqual(timeago.format(date, now, locale), u'1月前')
         
         now = date + datetime.timedelta(seconds = 2592000 * 3.5)
-        self.assertEqual(timeago.format(date, now, locale), u'3 月前')
+        self.assertEqual(timeago.format(date, now, locale), u'3月前')
         
         now = date + datetime.timedelta(seconds = 31536000)
-        self.assertEqual(timeago.format(date, now, locale), u'1 年前')
+        self.assertEqual(timeago.format(date, now, locale), u'1年前')
         
         now = date + datetime.timedelta(seconds = 31536000 * 1.1)
-        self.assertEqual(timeago.format(date, now, locale), u'1 年前')
+        self.assertEqual(timeago.format(date, now, locale), u'1年前')
         
         now = date + datetime.timedelta(seconds = 31536000 * 2.1)
-        self.assertEqual(timeago.format(date, now, locale), u'2 年前')
+        self.assertEqual(timeago.format(date, now, locale), u'2年前')
     
 if __name__ =='__main__':
     unittest.main()
