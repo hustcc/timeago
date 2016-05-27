@@ -7,8 +7,10 @@ Created on 2016年5月26日
 '''
 import unittest
 import datetime
+from datetime import date as dateimport, time
 import timeago
 from timeago.excepts import ParameterUnvalid
+from timeago import parser
 
 class TestCase(unittest.TestCase):
     ## init
@@ -207,6 +209,66 @@ class TestCase(unittest.TestCase):
         
         now = date + datetime.timedelta(seconds = 31536000 * 2.1)
         self.assertEqual(timeago.format(now, date, locale), u'2年后')
+
+    # test en lang
+    def test_timeago_parse_input(self):
+        date = datetime.datetime(2016, 5, 27, 21, 22, 2)
+        # timestamp
+        input = 1464355322.0
+        self.assertEqual(parser.parse(input), date)
+
+        # datetime string
+        input = '2016-05-27 21:22:02'
+        self.assertEqual(parser.parse(input), date)
+
+        input = '2016-5-27 21:22:2'
+        self.assertEqual(parser.parse(input), date)
+        
+        input = '2016/05/27 21:22:02'
+        self.assertEqual(parser.parse(input), date)
+
+        input = '2016/5/27 21:22:02'
+        self.assertEqual(parser.parse(input), date)
+
+        date = datetime.datetime(2016, 5, 27, 0, 0, 0)
+        input = '2016/5/27'
+        self.assertEqual(parser.parse(input), date)
+
+        input = '2016-5-27'
+        self.assertEqual(parser.parse(input), date)
+
+        input = '2016-05-27'
+        self.assertEqual(parser.parse(input), date)
+
+        today = dateimport.today()
+        date = datetime.datetime(today.year, today.month, today.day, 12, 12, 12)
+        input = '12:12:12'
+        self.assertEqual(parser.parse(input), date)
+
+        # date
+        input = dateimport(2016, 5, 27)
+        date = datetime.datetime(2016, 5, 27, 0, 0, 0)
+        self.assertEqual(parser.parse(input), date)
+        
+        # time
+        today = dateimport.today()
+        input = time(21, 45, 27)
+        date = datetime.datetime(today.year, today.month, today.day, 21, 45, 27)
+        self.assertEqual(parser.parse(input), date)
+
+        # datetime
+        input = datetime.datetime(2016, 5, 27, 21, 45, 27)
+        date = datetime.datetime(2016, 5, 27, 21, 45, 27)
+        self.assertEqual(parser.parse(input), date)
+
+        # None
+        input = '2016-05-27 23.23:21'
+        self.assertEqual(parser.parse(input), None)
+
+        # None
+        input = '2016-05-27  23:23:21'
+        self.assertEqual(parser.parse(input), None)
+        
 
 if __name__ =='__main__':
     unittest.main()

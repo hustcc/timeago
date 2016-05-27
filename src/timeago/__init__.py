@@ -6,8 +6,6 @@ Created on 2016-5-26
 @author: hustcc
 '''
 
-from __future__ import absolute_import
-
 from datetime import datetime
 from timeago.setting import SECONDS, MINUTE_SECONDS, HOUR_SECONDS, DAY_SECONDS, MONTH_SECONDS, YEAR_SECONDS
 from timeago.locales import timeago_template
