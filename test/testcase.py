@@ -115,5 +115,98 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds = 31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), u'2年前')
     
+    # test in
+    def test_timeago_en_in(self):
+        locale = 'en'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds = 2)
+        self.assertEqual(timeago.format(now, date, locale), 'a while')
+        
+        now = date + datetime.timedelta(seconds = 10)
+        self.assertEqual(timeago.format(now, date, locale), 'in 10 seconds')
+        
+        now = date + datetime.timedelta(seconds = 12)
+        self.assertEqual(timeago.format(now, date, locale), 'in 12 seconds')
+        
+        now = date + datetime.timedelta(seconds = 60)
+        self.assertEqual(timeago.format(now, date, locale), 'in 1 minute')
+        
+        now = date + datetime.timedelta(seconds = 60 * 3.4)
+        self.assertEqual(timeago.format(now, date, locale), 'in 3 minutes')
+        
+        now = date + datetime.timedelta(seconds = 3600)
+        self.assertEqual(timeago.format(now, date, locale), 'in 1 hour')
+        
+        now = date + datetime.timedelta(seconds = 3600 * 2)
+        self.assertEqual(timeago.format(now, date, locale), 'in 2 hours')
+        
+        now = date + datetime.timedelta(seconds = 86400)
+        self.assertEqual(timeago.format(now, date, locale), 'in 1 day')
+        
+        now = date + datetime.timedelta(seconds = 86400 * 4.5)
+        self.assertEqual(timeago.format(now, date, locale), 'in 4 days')
+        
+        now = date + datetime.timedelta(seconds = 2592000)
+        self.assertEqual(timeago.format(now, date, locale), 'in 1 month')
+        
+        now = date + datetime.timedelta(seconds = 2592000 * 3.5)
+        self.assertEqual(timeago.format(now, date, locale), 'in 3 months')
+        
+        now = date + datetime.timedelta(seconds = 31536000)
+        self.assertEqual(timeago.format(now, date, locale), 'in 1 year')
+        
+        now = date + datetime.timedelta(seconds = 31536000 * 1.1)
+        self.assertEqual(timeago.format(now, date, locale), 'in 1 year')
+        
+        now = date + datetime.timedelta(seconds = 31536000 * 2.1)
+        self.assertEqual(timeago.format(now, date, locale), 'in 2 years')
+
+    def test_timeago_cn_in(self):
+        locale = 'zh_CN'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds = 2)
+        self.assertEqual(timeago.format(now, date, locale), u'片刻后')
+        
+        now = date + datetime.timedelta(seconds = 10)
+        self.assertEqual(timeago.format(now, date, locale), u'10秒后')
+        
+        now = date + datetime.timedelta(seconds = 12)
+        self.assertEqual(timeago.format(now, date, locale), u'12秒后')
+        
+        now = date + datetime.timedelta(seconds = 60)
+        self.assertEqual(timeago.format(now, date, locale), u'1分钟后')
+        
+        now = date + datetime.timedelta(seconds = 60 * 3.4)
+        self.assertEqual(timeago.format(now, date, locale), u'3分钟后')
+        
+        now = date + datetime.timedelta(seconds = 3600)
+        self.assertEqual(timeago.format(now, date, locale), u'1小时后')
+        
+        now = date + datetime.timedelta(seconds = 3600 * 2)
+        self.assertEqual(timeago.format(now, date, locale), u'2小时后')
+        
+        now = date + datetime.timedelta(seconds = 86400)
+        self.assertEqual(timeago.format(now, date, locale), u'1天后')
+        
+        now = date + datetime.timedelta(seconds = 86400 * 4.5)
+        self.assertEqual(timeago.format(now, date, locale), u'4天后')
+        
+        now = date + datetime.timedelta(seconds = 2592000)
+        self.assertEqual(timeago.format(now, date, locale), u'1月后')
+        
+        now = date + datetime.timedelta(seconds = 2592000 * 3.5)
+        self.assertEqual(timeago.format(now, date, locale), u'3月后')
+        
+        now = date + datetime.timedelta(seconds = 31536000)
+        self.assertEqual(timeago.format(now, date, locale), u'1年后')
+        
+        now = date + datetime.timedelta(seconds = 31536000 * 1.1)
+        self.assertEqual(timeago.format(now, date, locale), u'1年后')
+        
+        now = date + datetime.timedelta(seconds = 31536000 * 2.1)
+        self.assertEqual(timeago.format(now, date, locale), u'2年后')
+
 if __name__ =='__main__':
     unittest.main()
