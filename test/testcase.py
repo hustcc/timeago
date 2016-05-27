@@ -6,11 +6,16 @@ Created on 2016年5月26日
 @author: hustcc
 '''
 import unittest
-import datetime
+import datetime, random
 from datetime import date as dateimport, time
 import timeago
 from timeago.excepts import ParameterUnvalid
 from timeago import parser
+
+
+def datetime_to_string(d):
+    temp = ['%s-%s-%s %s:%s:%s', '%s/%s/%s %s:%s:%s'][(random.randint(1, 99)) % 2]
+    return temp % (d.year, d.month, d.day, d.hour, d.minute, d.second)
 
 class TestCase(unittest.TestCase):
     ## init
@@ -24,6 +29,12 @@ class TestCase(unittest.TestCase):
     # test except
     def test_timeago_except(self):
         date = ''
+        self.assertRaises(ParameterUnvalid, timeago.format, date)
+
+        date = '12:23:23a'
+        self.assertRaises(ParameterUnvalid, timeago.format, date)
+
+        date = '2016-5-27  12:23:23'
         self.assertRaises(ParameterUnvalid, timeago.format, date)
     
     # test en lang
@@ -268,6 +279,58 @@ class TestCase(unittest.TestCase):
         # None
         input = '2016-05-27  23:23:21'
         self.assertEqual(parser.parse(input), None)
+
+    # test en lang
+    def test_timeago_string_input(self):
+        locale = None
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds = 2)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), 'just now')
+        
+        now = date + datetime.timedelta(seconds = 10)
+        self.assertEqual(timeago.format(datetime_to_string(date), datetime_to_string(now), locale), '10 seconds ago')
+        
+        now = date + datetime.timedelta(seconds = 12)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '12 seconds ago')
+        
+        now = date + datetime.timedelta(seconds = 60)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 minute ago')
+        
+        now = date + datetime.timedelta(seconds = 60 * 3.4)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '3 minutes ago')
+        
+        now = date + datetime.timedelta(seconds = 3600)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 hour ago')
+        
+        now = date + datetime.timedelta(seconds = 3600 * 2)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '2 hours ago')
+        
+        now = date + datetime.timedelta(seconds = 86400)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 day ago')
+        
+        now = date + datetime.timedelta(seconds = 86400 * 4.5)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '4 days ago')
+        
+        now = date + datetime.timedelta(seconds = 2592000)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 month ago')
+        
+        now = date + datetime.timedelta(seconds = 2592000 * 3.5)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '3 months ago')
+        
+        now = date + datetime.timedelta(seconds = 31536000)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 year ago')
+        
+        now = date + datetime.timedelta(seconds = 31536000 * 1.1)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 year ago')
+        
+        now = date + datetime.timedelta(seconds = 31536000 * 2.1)
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '2 years ago')
+    
+    # test en lang
+    def test_timeago_delta(self):
+        locale = None
+        date = datetime.timedelta(seconds = 9)
+        self.assertEqual(timeago.format(date, None, locale), 'just now')
         
 
 if __name__ =='__main__':

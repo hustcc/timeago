@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 setup(name = 'timeago',
-      version = '1.0.2',
+      version = '1.0.3',
       description = 'A python lib format datetime to *** time ago',
       long_description = '',
       author = 'hustcc',

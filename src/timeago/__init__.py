@@ -6,12 +6,13 @@ Created on 2016-5-26
 @author: hustcc
 '''
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from timeago.setting import SECONDS, MINUTE_SECONDS, HOUR_SECONDS, DAY_SECONDS, MONTH_SECONDS, YEAR_SECONDS
 from timeago.locales import timeago_template
 from timeago.excepts import ParameterUnvalid
+from timeago import parser
 
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 __license__ = 'MIT'
 __ALL__ = ['format']
 
@@ -20,14 +21,20 @@ def format(date, now=None, locale='en'):
     '''
     the entry method
     '''
-    if now is None:
-        now = datetime.now()
+    if isinstance(date, timedelta):
+        diff_seconds = date.total_seconds()
+    else:
+        if now is None:
+            now = datetime.now()
+        date = parser.parse(date)
+        now = parser.parse(now)
 
-    if type(date) != datetime or type(now) != datetime:
-        raise ParameterUnvalid('the 1st, 2st parameter show be type of datetime.')
-
-    # the gap sec
-    diff_seconds = (now - date).total_seconds()
+        if date is None:
+            raise ParameterUnvalid('the parameter `date` should be datetime / timedelta, or datetime formated string.')
+        if now is None:
+            raise ParameterUnvalid('the parameter `now` should be datetime, or datetime formated string.')
+        # the gap sec
+        diff_seconds = (now - date).total_seconds()
 
     # is ago or in
     ago_in = 0

@@ -6,7 +6,7 @@ Created on 2016-5-27
 @author: hustcc
 '''
 
-import datetime
+from datetime import datetime
 from datetime import date
 from datetime import time
 
@@ -17,7 +17,7 @@ def parse(input):
     '''
     parse input to datetime
     '''
-    if isinstance(input, datetime.datetime):
+    if isinstance(input, datetime):
         return input
     if isinstance(input, date):
         return date_to_datetime(input)
@@ -31,24 +31,23 @@ def parse(input):
 
 
 def date_to_datetime(d):
-    return datetime.datetime(d.year, d.month, d.day, 0, 0, 0)
+    return _combine_date_time(d, time(0, 0, 0))
 
 
 def time_to_datetime(t):
-    today = date.today()
-    return datetime.datetime(today.year, today.month, today.day, t.hour, t.minute, t.second)
+    return _combine_date_time(date.today(), t)
 
 
 def timestamp_to_datetime(ts):
     '''
     parse timestamp to datetime
     '''
-    return datetime.datetime.fromtimestamp(ts)
+    return datetime.fromtimestamp(ts)
 
 
 def _combine_date_time(d, t):
     if all([d, t]):
-        return datetime.datetime(d.year, d.month, d.day, t.hour, t.minute, t.second)
+        return datetime(d.year, d.month, d.day, t.hour, t.minute, t.second)
     return None
 
 
