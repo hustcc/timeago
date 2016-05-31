@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(name = 'timeago',
       version = '1.0.3',
-      description = 'A python lib format datetime to *** time ago',
+      description = 'A very simple python library, used to format datetime with `*** time ago` statement. eg: "3 hours ago".',
       long_description = '',
       author = 'hustcc',
       author_email = 'i@hust.cc',
