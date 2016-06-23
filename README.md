@@ -1,6 +1,6 @@
 # timeago
 
-A very simple python lib, used to format datetime with `*** time ago` statement.
+A very simple python lib, used to format datetime with `*** time ago` statement. Javascript version here. [timeago.js](https://github.com/hustcc/timeago.js).
 
 [![Build Status](https://travis-ci.org/hustcc/timeago.svg?branch=master)](https://travis-ci.org/hustcc/timeago) [![PyPi Status](https://img.shields.io/pypi/v/timeago.svg)](https://pypi.python.org/pypi/timeago) [![Python Versions](https://img.shields.io/pypi/pyversions/timeago.svg)](https://pypi.python.org/pypi/timeago) [![PyPi Downloads](https://img.shields.io/pypi/dm/timeago.svg)](https://pypi.python.org/pypi/timeago)
 
