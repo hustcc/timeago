@@ -35,12 +35,15 @@ pip install timeago
 ## Usage & Example
 
 ```py
+# -*- coding: utf-8 -*-
 import timeago, datetime
 
 now = datetime.datetime.now() + datetime.timedelta(seconds = 60 * 3.4)
 
+date = datetime.datetime.now()
+
 # locale
-print (timeago.format(date, now, locale='zh_CN')) # will print 3分钟后
+print (timeago.format(date, now, 'zh_CN')) # will print `3分钟后`
 
 # input datetime
 print (timeago.format(date, now)) # will print 3 minutes ago
