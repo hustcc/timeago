@@ -56,12 +56,8 @@ def _string_to_date(date_string):
         return None
     try:
         d_array = date_string.split('-')
-#         print d_array
-#         print '123123', date(2015, 1, 12)
-#         print date(int(d_array[0]), int(d_array[1]), int(d_array[2]))
         return date(int(d_array[0]), int(d_array[1]), int(d_array[2]))
-    except Exception, e:
-        print e
+    except:
         return None
 
 
