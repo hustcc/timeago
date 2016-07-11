@@ -12,7 +12,7 @@ from timeago.locales import timeago_template
 from timeago.excepts import ParameterUnvalid
 from timeago import parser
 
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 __license__ = 'MIT'
 __ALL__ = ['format']
 

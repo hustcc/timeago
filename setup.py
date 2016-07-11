@@ -19,7 +19,7 @@ print (timeago.format(d, locale='zh_CN')) # will print 3分钟后
 """
 
 setup(name = 'timeago',
-      version = '1.0.4',
+      version = '1.0.5',
       description = 'A very simple python library, used to format datetime with `*** time ago` statement. eg: "3 hours ago".',
       long_description = LONGDOC,
       author = 'hustcc',
