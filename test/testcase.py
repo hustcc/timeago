@@ -240,7 +240,6 @@ class TestCase(unittest.TestCase):
 
         date = datetime.datetime(2016, 5, 27, 0, 0, 0)
         input = '2016/05/27'
-        print (parser.parse(input))
         self.assertEqual(parser.parse(input), date)
 
         input = '2016-5-27'
