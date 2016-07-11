@@ -12,9 +12,19 @@ from timeago.locales import timeago_template
 from timeago.excepts import ParameterUnvalid
 from timeago import parser
 
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 __license__ = 'MIT'
 __ALL__ = ['format']
+
+
+# Original fix #2 for Py2.6
+def total_seconds(dt):
+    # Keep backward compatibility with Python 2.6 which doesn't have
+    # this method
+    if hasattr(datetime, 'total_seconds'):
+        return dt.total_seconds()
+    else:
+        return (dt.microseconds + (dt.seconds + dt.days * 24 * 3600) * 10**6) / 10**6
 
 
 def format(date, now=None, locale='en'):
@@ -22,7 +32,7 @@ def format(date, now=None, locale='en'):
     the entry method
     '''
     if isinstance(date, timedelta):
-        diff_seconds = date.total_seconds()
+        diff_seconds = int(total_seconds(date))
     else:
         if now is None:
             now = datetime.now()
@@ -34,7 +44,7 @@ def format(date, now=None, locale='en'):
         if now is None:
             raise ParameterUnvalid('the parameter `now` should be datetime, or datetime formated string.')
         # the gap sec
-        diff_seconds = (now - date).total_seconds()
+        diff_seconds = int(total_seconds(now - date))
 
     # is ago or in
     ago_in = 0

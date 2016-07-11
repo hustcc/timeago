@@ -8,10 +8,10 @@ Created on 2016年5月26日
 import unittest
 import datetime, random
 from datetime import date as dateimport, time
+
 import timeago
 from timeago.excepts import ParameterUnvalid
 from timeago import parser
-
 
 def datetime_to_string(d):
     temp = ['%s-%s-%s %s:%s:%s', '%s/%s/%s %s:%s:%s'][(random.randint(1, 99)) % 2]
@@ -224,9 +224,6 @@ class TestCase(unittest.TestCase):
     # test en lang
     def test_timeago_parse_input(self):
         date = datetime.datetime(2016, 5, 27, 21, 22, 2)
-        # timestamp
-        input = 1464355322.0
-        self.assertEqual(parser.parse(input), date)
 
         # datetime string
         input = '2016-05-27 21:22:02'
@@ -242,7 +239,8 @@ class TestCase(unittest.TestCase):
         self.assertEqual(parser.parse(input), date)
 
         date = datetime.datetime(2016, 5, 27, 0, 0, 0)
-        input = '2016/5/27'
+        input = '2016/05/27'
+        print (parser.parse(input))
         self.assertEqual(parser.parse(input), date)
 
         input = '2016-5-27'

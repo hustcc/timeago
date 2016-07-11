@@ -46,7 +46,7 @@ def timestamp_to_datetime(ts):
 
 
 def _combine_date_time(d, t):
-    if all([d, t]):
+    if (d is not None) and (t is not None):
         return datetime(d.year, d.month, d.day, t.hour, t.minute, t.second)
     return None
 
@@ -56,8 +56,12 @@ def _string_to_date(date_string):
         return None
     try:
         d_array = date_string.split('-')
+#         print d_array
+#         print '123123', date(2015, 1, 12)
+#         print date(int(d_array[0]), int(d_array[1]), int(d_array[2]))
         return date(int(d_array[0]), int(d_array[1]), int(d_array[2]))
-    except:
+    except Exception, e:
+        print e
         return None
 
 
