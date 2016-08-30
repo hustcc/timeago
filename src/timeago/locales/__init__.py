@@ -17,7 +17,7 @@ def locale_module(mod, locale):
         raise
 
 
-def timeago_template(key, locale, ago_in):
+def timeago_template(locale, index, ago_in):
     '''
     simple locale implement
     '''
@@ -29,4 +29,4 @@ def timeago_template(key, locale, ago_in):
         LOCALE = __import__('timeago.locales.' + locale)
         LOCALE = locale_module(LOCALE, locale)
 
-    return LOCALE.get(key, ['', ''])[ago_in]
+    return LOCALE[index][ago_in]

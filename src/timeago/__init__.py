@@ -7,7 +7,6 @@ Created on 2016-5-26
 '''
 
 from datetime import datetime, timedelta
-from timeago.setting import SECONDS, MINUTE_SECONDS, HOUR_SECONDS, DAY_SECONDS, MONTH_SECONDS, YEAR_SECONDS
 from timeago.locales import timeago_template
 from timeago.excepts import ParameterUnvalid
 from timeago import parser
@@ -25,6 +24,11 @@ def total_seconds(dt):
         return dt.total_seconds()
     else:
         return (dt.microseconds + (dt.seconds + dt.days * 24 * 3600) * 10**6) / 10**6
+
+
+# second, minite, hour, day, week, month, year(365 days)
+SEC_ARRAY = [60, 60, 24, 7, 365.0 / 7 / 12, 12]
+SEC_ARRAY_LEN = 6
 
 
 def format(date, now=None, locale='en'):
@@ -52,49 +56,15 @@ def format(date, now=None, locale='en'):
         ago_in = 1  # date is later then now, is the time in future
         diff_seconds *= -1  # chango to positive
 
-    # less then SECONDS
-    if(diff_seconds < SECONDS):
-        return timeago_template('JUST_NOW', locale, ago_in)
+    tmp = 0
+    for i in xrange(SEC_ARRAY_LEN):
+        tmp = SEC_ARRAY[i]
+        if diff_seconds > tmp:
+            diff_seconds /= tmp
+    diff_seconds = int(diff_seconds)
+    i *= 2
 
-    # seconds ago
-    if(diff_seconds < MINUTE_SECONDS):
-        return timeago_template('SECOND_AGO', locale, ago_in) % (int(diff_seconds))
+    if diff_seconds > (i == 0 and 9 or 1):
+        i += 1
 
-    # a minute ago
-    if(diff_seconds < MINUTE_SECONDS * 2):
-        return timeago_template('A_MINUTE_AGO', locale, ago_in)
-
-    # minutes ago
-    if(diff_seconds < HOUR_SECONDS):
-        return timeago_template('MINUTES_AGO', locale, ago_in) % (int(diff_seconds / MINUTE_SECONDS))
-
-    # an hour ago
-    if(diff_seconds < HOUR_SECONDS * 2):
-        return timeago_template('AN_HOUR_AGO', locale, ago_in)
-
-    # hours ago
-    if(diff_seconds < HOUR_SECONDS * 24):
-        return timeago_template('HOURS_AGO', locale, ago_in) % (int(diff_seconds / HOUR_SECONDS))
-
-    # a day ago
-    if(diff_seconds < DAY_SECONDS * 2):
-        return timeago_template('A_DAY_AGO', locale, ago_in)
-
-    # days ago
-    if(diff_seconds < DAY_SECONDS * 30):
-        return timeago_template('DAYS_AGO', locale, ago_in) % (int(diff_seconds / DAY_SECONDS))
-
-    # a month ago
-    if(diff_seconds < MONTH_SECONDS * 2):
-        return timeago_template('A_MONTH_AGO', locale, ago_in)
-
-    # months ago
-    if(diff_seconds < MONTH_SECONDS * 12):
-        return timeago_template('MONTHS_AGO', locale, ago_in) % (int(diff_seconds / MONTH_SECONDS))
-
-    # a year ago
-    if(diff_seconds < YEAR_SECONDS * 2):
-        return timeago_template('A_YEAR_AGO', locale, ago_in)
-
-    # years ago
-    return timeago_template('YEARS_AGO', locale, ago_in) % (int(diff_seconds / YEAR_SECONDS))
+    return timeago_template(locale, i, ago_in).replace('%s', diff_seconds, 1)
