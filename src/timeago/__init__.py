@@ -49,7 +49,7 @@ def format(date, now=None, locale='en'):
         date = now - date
     # the gap sec
     diff_seconds = int(total_seconds(date))
-    
+
     # is ago or in
     ago_in = 0
     if diff_seconds < 0:
@@ -76,7 +76,3 @@ def format(date, now=None, locale='en'):
 
     tmp = timeago_template(locale, i, ago_in)
     return '%s' in tmp and tmp % diff_seconds or tmp
-
-def datetime_to_string(d):
-    temp = ['%s-%s-%s %s:%s:%s', '%s/%s/%s %s:%s:%s'][(random.randint(1, 99)) % 2]
-    return temp % (d.year, d.month, d.day, d.hour, d.minute, d.second)
