@@ -69,7 +69,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(date, now, locale), '4 days ago')
         
         now = date + datetime.timedelta(seconds = 2592000)
-        self.assertEqual(timeago.format(date, now, locale), '1 month ago')
+        self.assertEqual(timeago.format(date, now, locale), '4 weeks ago')
         
         now = date + datetime.timedelta(seconds = 2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), '3 months ago')
@@ -114,7 +114,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(date, now, locale), u'4天前')
         
         now = date + datetime.timedelta(seconds = 2592000)
-        self.assertEqual(timeago.format(date, now, locale), u'1月前')
+        self.assertEqual(timeago.format(date, now, locale), u'4周前')
         
         now = date + datetime.timedelta(seconds = 2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), u'3月前')
@@ -161,7 +161,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(now, date, locale), 'in 4 days')
         
         now = date + datetime.timedelta(seconds = 2592000)
-        self.assertEqual(timeago.format(now, date, locale), 'in 1 month')
+        self.assertEqual(timeago.format(now, date, locale), 'in 4 weeks')
         
         now = date + datetime.timedelta(seconds = 2592000 * 3.5)
         self.assertEqual(timeago.format(now, date, locale), 'in 3 months')
@@ -207,7 +207,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(now, date, locale), u'4天后')
         
         now = date + datetime.timedelta(seconds = 2592000)
-        self.assertEqual(timeago.format(now, date, locale), u'1月后')
+        self.assertEqual(timeago.format(now, date, locale), u'4周后')
         
         now = date + datetime.timedelta(seconds = 2592000 * 3.5)
         self.assertEqual(timeago.format(now, date, locale), u'3月后')
@@ -309,7 +309,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '4 days ago')
         
         now = date + datetime.timedelta(seconds = 2592000)
-        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '1 month ago')
+        self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '4 weeks ago')
         
         now = date + datetime.timedelta(seconds = 2592000 * 3.5)
         self.assertEqual(timeago.format(datetime_to_string(date), now, locale), '3 months ago')
