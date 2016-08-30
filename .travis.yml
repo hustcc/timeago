@@ -8,7 +8,6 @@ python:
   - "3.5"
 before_install:
   - pip install codecov
-  - pip install flake8
 # command to install dependencies
 install:
   - pip install .
