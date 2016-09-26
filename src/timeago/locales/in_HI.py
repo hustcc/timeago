@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 '''
 Created on 2016-9-26
-
-@author: ajphukan
-@email : leocreed1994@gmail.com
+@author   : ajphukan
+@email    : leocreed1994@gmail.com
+@Country  : India
+@Language : Hindi
 '''
 
 LOCALE = [
