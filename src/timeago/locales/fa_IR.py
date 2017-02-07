@@ -6,6 +6,7 @@ Created on 2017-01-26
 @author: meyti[mahdi.ghane.g]
 '''
 
+
 LOCALE = [
     ["هم اکنون",
      "به زودی"],
