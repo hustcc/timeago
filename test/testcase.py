@@ -86,6 +86,52 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), '2 years ago')
 
+    # test fa lang
+    def test_timeago_fa(self):
+        locale = 'fa_IR'
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), 'هم اکنون')
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), '10 ثانیه پیش')
+
+        now = date + datetime.timedelta(seconds=12)
+        self.assertEqual(timeago.format(date, now, locale), '12 ثانیه پیش')
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), 'یک دقیقه پیش')
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), '3 دقیقه پیش')
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), 'یک ساعت پیش')
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), '2 ساعت پیش')
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), 'دیروز')
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), '4 روز پیش')
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), '4 هفته پیش')
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), '3 ماه پیش')
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), 'پارسال')
+
+        now = date + datetime.timedelta(seconds=31536000 * 1.1)
+        self.assertEqual(timeago.format(date, now, locale), 'پارسال')
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), '2 سال پیش')
+
     def test_timeago_cn(self):
         locale = 'zh_CN'
         date = datetime.datetime.now()
@@ -177,6 +223,53 @@ class TestCase(unittest.TestCase):
 
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(now, date, locale), 'in 2 years')
+
+    # test in
+    def test_timeago_fa_in(self):
+        locale = 'fa_IR'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(now, date, locale), 'به زودی')
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(now, date, locale), '10 ثانیه بعد')
+
+        now = date + datetime.timedelta(seconds=12)
+        self.assertEqual(timeago.format(now, date, locale), '12 ثانیه بعد')
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(now, date, locale), 'یک دقیقه بعد')
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(now, date, locale), '3 دقیقه بعد')
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(now, date, locale), 'یک ساعت بعد')
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(now, date, locale), '2 ساعت بعد')
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(now, date, locale), 'فردا')
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(now, date, locale), '4 روز بعد')
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(now, date, locale), '4 هفته بعد')
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(now, date, locale), '3 ماه بعد')
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(now, date, locale), 'سال بعد')
+
+        now = date + datetime.timedelta(seconds=31536000 * 1.1)
+        self.assertEqual(timeago.format(now, date, locale), 'سال بعد')
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(now, date, locale), '2 سال بعد')
 
     def test_timeago_cn_in(self):
         locale = 'zh_CN'
