@@ -24,7 +24,8 @@ def total_seconds(dt):
     if hasattr(datetime, 'total_seconds'):
         return dt.total_seconds()
     else:
-        return (dt.microseconds + (dt.seconds + dt.days * 24 * 3600) * 10**6) / 10**6
+        return (dt.microseconds +
+                (dt.seconds + dt.days * 24 * 3600) * 10**6) / 10**6
 
 
 # second, minite, hour, day, week, month, year(365 days)
@@ -43,9 +44,11 @@ def format(date, now=None, locale='en'):
         now = parser.parse(now)
 
         if date is None:
-            raise ParameterUnvalid('the parameter `date` should be datetime / timedelta, or datetime formated string.')
+            raise ParameterUnvalid('the parameter `date` should be datetime '
+                                   '/ timedelta, or datetime formated string.')
         if now is None:
-            raise ParameterUnvalid('the parameter `now` should be datetime, or datetime formated string.')
+            raise ParameterUnvalid('the parameter `now` should be datetime, '
+                                   'or datetime formated string.')
         date = now - date
     # the gap sec
     diff_seconds = int(total_seconds(date))
