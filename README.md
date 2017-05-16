@@ -62,7 +62,7 @@ print (timeago.format('2016-05-27 12:12:12', '2016-05-27 12:12:03')) # will prin
 ```
 
 
-## Methor & Parameter
+## Method & Parameter
 
 only one API **`format`**.
 
