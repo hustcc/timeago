@@ -43,7 +43,7 @@ now = datetime.datetime.now() + datetime.timedelta(seconds = 60 * 3.4)
 date = datetime.datetime.now()
 
 # locale
-print (timeago.format(date, now, 'zh_CN')) # will print `3分钟后`
+print (timeago.format(date, now, 'zh_CN')) # will print `3分钟前`
 
 # input datetime
 print (timeago.format(date, now)) # will print 3 minutes ago
@@ -54,11 +54,12 @@ print (timeago.format(datetime.timedelta(seconds = 60 * 3.4))) # will print 3 mi
 # input date, auto add time(0, 0, 0)
 print (timeago.format(datetime.date(2016, 5, 27), now))
 
-# input date
-print (timeago.format(datetime.date(2016, 5, 27), now))
-
 # input datetime formated string
-print (timeago.format('2016-05-27 12:12:12', '2016-05-27 12:12:03')) # will print just now
+print (timeago.format('2016-05-27 12:12:03', '2016-05-27 12:12:12')) # will print just now
+
+# inverse two parameters
+print (timeago.format('2016-05-27 12:12:12', '2016-05-27 12:12:03')) # will print a while
+
 ```
 
 
