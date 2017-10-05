@@ -7,4 +7,4 @@ Created on 2016-5月26
 '''
 
 
-DEFAULT_LOCALE = 'en'  # default lang
+DEFAULT_LOCALE = 'deu'  # default lang
