@@ -412,7 +412,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(now, date, locale), u'2年以内')
 
     # test ru lang
-    def test_timeago_en(self):
+    def test_timeago_ru(self):
         locale = 'ru'
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
