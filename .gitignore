@@ -64,3 +64,11 @@ target/
 .project
 .pydevproject
 .settings
+
+\.idea/
+
+bin/
+
+pip-selfcheck\.json
+
+include/
