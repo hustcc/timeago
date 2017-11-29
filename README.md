@@ -71,12 +71,27 @@ Three parameters of method `format`:
 
  - **`date`**: the parameter which will be formated, must be instance of `datetime` / `timedelta` or datetime formated string.
  - **`now`**: reference time, must be instance of `datetime` or datetime formated string.
- - **`locale`**: the locale code, only **zh_CN** / **en** supported, default `en`. Other locale, you can pull request.
+ - **`locale`**: the locale code, default `en`. 
 
+
+## Locale
+
+At the time we're speaking, [following locale](src/timeago/locales) are available:
+ - `en`
+ - `fa_IR`
+ - `in_BG`
+ - `in_HI`
+ - `ja`
+ - `ru`
+ - `sv_SE`
+ - `zh_CN`
+ - `de`
 
 
 ## Localization
 
-1. foke the project
-2. add `locale.py` file in the locales folder.
-3. pull a request.
+1. Fork the project
+2. Create a locale python script called `[name_of_your_locale].py` following the existing other locales.
+3. Add the name of your locale in the Readme to keep it updated.
+4. Add test case following the [english model](/test/testcase.py#L44)
+5. Create the Pull Request.
