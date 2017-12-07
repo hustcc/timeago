@@ -16,7 +16,10 @@ from subprocess import call
 dest = './jsrepo'
 
 # Clean dest
-shutil.rmtree(dest)
+try:
+    shutil.rmtree(dest)
+except:
+    pass
 
 if not os.access(dest, os.F_OK):
     os.mkdir(dest)
@@ -33,7 +36,7 @@ for filename in glob.glob(os.path.join(dest, 'locales/*.js')):
         print('Generating %s\'s JSON Object...' % filename)
         call(["node", "convert_local_to_json.js", filename])
 
-override = True
+override = False
 
 for filename in glob.glob('./tmp/*.json'):
     wrong = False
