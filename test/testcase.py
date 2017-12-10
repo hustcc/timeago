@@ -469,9 +469,6 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), u'vor 10 Sekunden')
 
-        now = date + datetime.timedelta(seconds=12)
-        self.assertEqual(timeago.format(date, now, locale), u'vor 12 Sekunden')
-
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), u'vor 1 Minute')
 
@@ -490,16 +487,19 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), u'vor 4 Tagen')
 
+        now = date + datetime.timedelta(seconds=86400 * 7)
+        self.assertEqual(timeago.format(date, now, locale), u'vor 1 Woche')
+
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), u'vor 4 Wochen')
+
+        now = date + datetime.timedelta(seconds=86400 * 31)
+        self.assertEqual(timeago.format(date, now, locale), u'vor 1 Monat')
 
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), u'vor 3 Monaten')
 
         now = date + datetime.timedelta(seconds=31536000)
-        self.assertEqual(timeago.format(date, now, locale), u'vor 1 Jahr')
-
-        now = date + datetime.timedelta(seconds=31536000 * 1.1)
         self.assertEqual(timeago.format(date, now, locale), u'vor 1 Jahr')
 
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
