@@ -2,7 +2,7 @@
 
 A very simple python lib, used to format datetime with `*** time ago` statement. Javascript version here. [timeago.js](https://github.com/hustcc/timeago.js).
 
-[![Build Status](https://travis-ci.org/hustcc/timeago.svg?branch=master)](https://travis-ci.org/hustcc/timeago) [![PyPi Status](https://img.shields.io/pypi/v/timeago.svg)](https://pypi.python.org/pypi/timeago) [![Python Versions](https://img.shields.io/pypi/pyversions/timeago.svg)](https://pypi.python.org/pypi/timeago) [![PyPi Downloads](https://img.shields.io/pypi/dm/timeago.svg)](https://pypi.python.org/pypi/timeago)
+[![Build Status](https://travis-ci.org/hustcc/timeago.svg?branch=master)](https://travis-ci.org/hustcc/timeago) [![PyPi Status](https://img.shields.io/pypi/v/timeago.svg)](https://pypi.python.org/pypi/timeago) [![Python Versions](https://img.shields.io/pypi/pyversions/timeago.svg)](https://pypi.python.org/pypi/timeago) 
 
 Such as: 
 
@@ -23,7 +23,7 @@ in 6 months
 in 2 years
 ```
 
-or Chinese locale statement.
+For other languages see below. 
 
 ## Install
 
@@ -77,21 +77,47 @@ Three parameters of method `format`:
 ## Locale
 
 At the time we're speaking, [following locale](src/timeago/locales) are available:
+ - `bg`
+ - `ca`
+ - `da`
+ - `de`
+ - `el`
  - `en`
+ - `en_short`
+ - `es`
+ - `eu`
  - `fa_IR`
+ - `fi`
+ - `fr`
+ - `gl`
+ - `he`
+ - `hu`
  - `in_BG`
  - `in_HI`
+ - `in_ID`
+ - `it`
  - `ja`
+ - `ko`
+ - `ml`
+ - `my`
+ - `nb_NO`
+ - `nl`
+ - `nn_NO`
+ - `pt_BR`
  - `ru`
  - `sv_SE`
+ - `ta`
+ - `th`
+ - `tr`
+ - `vi`
  - `zh_CN`
- - `de`
+ - `zh_TW`
 
 
 ## Localization
 
 1. Fork the project
 2. Create a locale python script called `[name_of_your_locale].py` following the existing other locales.
-3. Add the name of your locale in the Readme to keep it updated.
+3. Add the name of your locale in the Readme to keep it updated (**alphabetically**).
 4. Add test case following the [english model](/test/testcase.py#L44)
 5. Create the Pull Request.

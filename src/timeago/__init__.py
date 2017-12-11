@@ -28,7 +28,7 @@ def total_seconds(dt):
                 (dt.seconds + dt.days * 24 * 3600) * 10**6) / 10**6
 
 
-# second, minite, hour, day, week, month, year(365 days)
+# second, minute, hour, day, week, month, year(365 days)
 SEC_ARRAY = [60.0, 60.0, 24.0, 7.0, 365.0 / 7.0 / 12.0, 12.0]
 SEC_ARRAY_LEN = 6
 
