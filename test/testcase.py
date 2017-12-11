@@ -5,6 +5,12 @@ Created on 2016年5月26日
 
 @author: hustcc
 '''
+
+import sys
+import os
+# We need to add the source to the path (required at least on my machine).
+sys.path.insert(0, os.path.realpath('src'))
+
 import unittest
 import datetime
 import random
