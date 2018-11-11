@@ -78,7 +78,7 @@ def format(date, now=None, locale='en'):
         locale = DEFAULT_LOCALE
     
     # Parsing function for languages with specific grammar.
-    # They are called with i, ago_in and diff_seconds parameters.
+    # They are called with i, ago_in and diff_seconds arguments.
     parsing_func = custom_grammar.SPECIFIC_GRAMMAR_LANGUAGES.get(locale, lambda i, ago_in, diff_seconds: ago_in)
     ago_in = parsing_func(i, ago_in, diff_seconds)
 

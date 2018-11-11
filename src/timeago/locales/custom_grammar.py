@@ -17,7 +17,7 @@ def parse_pl_grammar(index, ago_in, diff_seconds):
     if (((
           last_two_numbers and last_two_numbers not in range(12, 15) 
           and last_number in range(2, 5)
-         ) 
+         ) # Everything that ends with 2-5 but doesn't end with 12-15
          or (diff_seconds in range(2, 5)) # diff > 1 & < 5
         )
         and not (index + 1) % 2 # Not the line with %s
