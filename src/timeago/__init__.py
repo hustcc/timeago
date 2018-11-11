@@ -7,7 +7,7 @@ Created on 2016-5-26
 '''
 
 from datetime import datetime, timedelta
-from timeago.locales import timeago_template
+from timeago.locales import timeago_template, custom_grammar
 from timeago.excepts import ParameterUnvalid
 from timeago import parser
 from timeago.setting import DEFAULT_LOCALE
@@ -76,6 +76,11 @@ def format(date, now=None, locale='en'):
 
     if locale is None:
         locale = DEFAULT_LOCALE
+    
+    # Parsing function for languages with specific grammar.
+    # They are called with i, ago_in and diff_seconds parameters.
+    parsing_func = custom_grammar.SPECIFIC_GRAMMAR_LANGUAGES.get(locale, lambda i, ago_in, diff_seconds: ago_in)
+    ago_in = parsing_func(i, ago_in, diff_seconds)
 
     tmp = timeago_template(locale, i, ago_in)
     return '%s' in tmp and tmp % diff_seconds or tmp
