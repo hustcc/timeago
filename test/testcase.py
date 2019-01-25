@@ -92,6 +92,10 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), '2 years ago')
 
+    def test_raw_timedelta_defaults_to_now(self):
+        delta = datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(delta, None), '10 seconds ago')
+
     # test fa lang
     def test_timeago_fa(self):
         locale = 'fa_IR'
