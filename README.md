@@ -103,6 +103,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `nb_NO`
  - `nl`
  - `nn_NO`
+ - `pl`
  - `pt_BR`
  - `ru`
  - `sv_SE`
@@ -121,3 +122,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
 3. Add the name of your locale in the Readme to keep it updated (**alphabetically**).
 4. Add test case following the [english model](/test/testcase.py#L44)
 5. Create the Pull Request.
+
+### Notes
+
+For complicated plurals, you can take example on the PL :flag-pl: locale [here](src/timeago/locales/pl.py)
