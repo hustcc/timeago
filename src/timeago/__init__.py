@@ -78,4 +78,6 @@ def format(date, now=None, locale='en'):
         locale = DEFAULT_LOCALE
 
     tmp = timeago_template(locale, i, ago_in)
+    if hasattr(tmp, '__call__'):
+        tmp = tmp(diff_seconds)
     return '%s' in tmp and tmp % diff_seconds or tmp

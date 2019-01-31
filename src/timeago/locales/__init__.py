@@ -29,4 +29,7 @@ def timeago_template(locale, index, ago_in):
         LOCALE = __import__('timeago.locales.' + locale)
         LOCALE = locale_module(LOCALE, locale)
 
-    return LOCALE[index][ago_in]
+    if isinstance(LOCALE, list):
+        return LOCALE[index][ago_in]
+    else:
+        return LOCALE(index, ago_in)
