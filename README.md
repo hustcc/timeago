@@ -119,8 +119,8 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
 
 1. Fork the project
 2. Create a locale python script called `[name_of_your_locale].py` following the existing other locales.
-3. Add the name of your locale in the Readme to keep it updated (**alphabetically**).
-4. Add test case following the [english model](/test/testcase.py#L44)
+3. Add the name of your locale in the Readme (both in MD and in RST) to keep it updated (**alphabetically**).
+4. Add test case following the [english model](/test/testcase.py#L50)
 5. Create the Pull Request.
 
 ### Notes
