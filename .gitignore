@@ -72,3 +72,4 @@ bin/
 pip-selfcheck\.json
 
 include/
+share/
