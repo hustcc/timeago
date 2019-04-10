@@ -424,48 +424,107 @@ class TestCase(unittest.TestCase):
     # test ru lang
     def test_timeago_ru(self):
         locale = 'ru'
+        # Just now.
         date = datetime.datetime.now()
-        now = date + datetime.timedelta(seconds=2)
+        now = date + datetime.timedelta(seconds=4)
         self.assertEqual(timeago.format(date, now, locale), 'только что')
 
+        # Seconds.
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), '10 секунд назад')
 
-        now = date + datetime.timedelta(seconds=12)
-        self.assertEqual(timeago.format(date, now, locale), '12 секунд назад')
+        now = date + datetime.timedelta(seconds=21)
+        self.assertEqual(timeago.format(date, now, locale), '21 секунду назад')
 
+        now = date + datetime.timedelta(seconds=22)
+        self.assertEqual(timeago.format(date, now, locale), '22 секунды назад')
+
+        now = date + datetime.timedelta(seconds=26)
+        self.assertEqual(timeago.format(date, now, locale), '26 секунд назад')
+
+        # Minutes.
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), 'минуту назад')
 
-        now = date + datetime.timedelta(seconds=60 * 3.4)
-        self.assertEqual(timeago.format(date, now, locale), '3 минут назад')
+        now = date + datetime.timedelta(seconds=60 * 2)
+        self.assertEqual(timeago.format(date, now, locale), '2 минуты назад')
 
-        now = date + datetime.timedelta(seconds=3600)
+        now = date + datetime.timedelta(seconds=60 * 5)
+        self.assertEqual(timeago.format(date, now, locale), '5 минут назад')
+
+        now = date + datetime.timedelta(seconds=60 * 21)
+        self.assertEqual(timeago.format(date, now, locale), '21 минуту назад')
+
+        now = date + datetime.timedelta(seconds=60 * 22)
+        self.assertEqual(timeago.format(date, now, locale), '22 минуты назад')
+
+        now = date + datetime.timedelta(seconds=60 * 26)
+        self.assertEqual(timeago.format(date, now, locale), '26 минут назад')
+
+        # Hours.
+        now = date + datetime.timedelta(hours=1)
         self.assertEqual(timeago.format(date, now, locale), 'час назад')
 
-        now = date + datetime.timedelta(seconds=3600 * 2)
-        self.assertEqual(timeago.format(date, now, locale), '2 часов назад')
+        now = date + datetime.timedelta(hours=3)
+        self.assertEqual(timeago.format(date, now, locale), '3 часа назад')
 
+        now = date + datetime.timedelta(hours=5)
+        self.assertEqual(timeago.format(date, now, locale), '5 часов назад')
+
+        now = date + datetime.timedelta(hours=21)
+        self.assertEqual(timeago.format(date, now, locale), '21 час назад')
+
+        now = date + datetime.timedelta(hours=23)
+        self.assertEqual(timeago.format(date, now, locale), '23 часа назад')
+
+        # Days.
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), 'вчера')
 
-        now = date + datetime.timedelta(seconds=86400 * 4.5)
-        self.assertEqual(timeago.format(date, now, locale), '4 дней назад')
+        now = date + datetime.timedelta(hours=24 * 3)
+        self.assertEqual(timeago.format(date, now, locale), '3 дня назад')
 
-        now = date + datetime.timedelta(seconds=2592000)
-        self.assertEqual(timeago.format(date, now, locale), '4 недель назад')
+        now = date + datetime.timedelta(hours=24 * 5)
+        self.assertEqual(timeago.format(date, now, locale), '5 дней назад')
 
-        now = date + datetime.timedelta(seconds=2592000 * 3.5)
-        self.assertEqual(timeago.format(date, now, locale), '3 месяцев назад')
+        # Weeks.
+        now = date + datetime.timedelta(days=7)
+        self.assertEqual(timeago.format(date, now, locale), 'неделю назад')
 
+        for week in (2, 3, 4):
+            now = date + datetime.timedelta(days=week * 7)
+            self.assertEqual(timeago.format(date, now, locale), '%s недели назад' % week)
+
+        # Months.
+        now = date + datetime.timedelta(days=31)
+        self.assertEqual(timeago.format(date, now, locale), 'месяц назад')
+
+        for month in (2, 3, 4):
+            now = date + datetime.timedelta(days=month * 31)
+            self.assertEqual(timeago.format(date, now, locale), '%s месяца назад' % month)
+
+        now = date + datetime.timedelta(seconds=2592000 * 5.5)
+        self.assertEqual(timeago.format(date, now, locale), '5 месяцев назад')
+
+        # Years.
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), 'год назад')
 
-        now = date + datetime.timedelta(seconds=31536000 * 1.1)
-        self.assertEqual(timeago.format(date, now, locale), 'год назад')
+        for year in (2, 3, 4):
+            now = date + datetime.timedelta(seconds=31536000 * (year + 0.1))
+            self.assertEqual(timeago.format(date, now, locale), '%s года назад' % year)
 
-        now = date + datetime.timedelta(seconds=31536000 * 2.1)
-        self.assertEqual(timeago.format(date, now, locale), '2 лет назад')
+        now = date + datetime.timedelta(seconds=31536000 * 5.1)
+        self.assertEqual(timeago.format(date, now, locale), '5 лет назад')
+
+        now = date + datetime.timedelta(seconds=31536000 * 21.1)
+        self.assertEqual(timeago.format(date, now, locale), '21 год назад')
+
+        now = date + datetime.timedelta(seconds=31536000 * 22.1)
+        self.assertEqual(timeago.format(date, now, locale), '22 года назад')
+
+        now = date + datetime.timedelta(seconds=31536000 * 26.1)
+        self.assertEqual(timeago.format(date, now, locale), '26 лет назад')
 
         # test ja lang
 
