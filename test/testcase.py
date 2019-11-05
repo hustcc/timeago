@@ -700,940 +700,940 @@ class TestCase(unittest.TestCase):
 
     def test_timeago_bg(self):
         locale = 'bg'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "току що")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "преди 10 секунди")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "преди 1 минута")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "преди 3 минути")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "преди 1 час")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "преди 2 часа")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "преди 1 ден")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "преди 4 дни")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "преди 1 седмица")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "преди 4 седмици")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "преди 1 месец")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "преди 3 месеца")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "преди 1 година")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "преди 2 години")
 
 
     def test_timeago_ca(self):
         locale = 'ca'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "fa un moment")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "fa 10 segons")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "fa 1 minut")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "fa 3 minuts")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "fa 1 hora")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "fa 2 hores")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "fa 1 dia")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "fa 4 dies")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "fa 1 setmana")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "fa 4 setmanes")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "fa 1 mes")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "fa 3 mesos")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "fa 1 any")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "fa 2 anys")
 
 
     def test_timeago_da(self):
         locale = 'da'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "for et øjeblik siden")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "for 10 sekunder siden")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "for 1 minut siden")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "for 3 minutter siden")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "for 1 time siden")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "for 2 timer siden")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "for 1 dag siden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "for 4 dage siden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "for 1 uge siden")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "for 4 uger siden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "for 1 måned siden")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "for 3 måneder siden")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "for 1 år siden")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "for 2 år siden")
 
 
     def test_timeago_el(self):
         locale = 'el'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "μόλις τώρα")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 δευτερόλεπτα πριν")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 λεπτό πριν")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 λεπτά πριν")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 ώρα πριν")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 ώρες πριν")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 μέρα πριν")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 μέρες πριν")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 εβδομάδα πριν")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 εβδομάδες πριν")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 μήνα πριν")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 μήνες πριν")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 χρόνο πριν")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 χρόνια πριν")
 
 
     def test_timeago_en_short(self):
         locale = 'en_short'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "just now")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10s ago")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1m ago")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3m ago")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1h ago")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2h ago")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1d ago")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4d ago")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1w ago")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4w ago")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1mo ago")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3mo ago")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1yr ago")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2yr ago")
 
 
     def test_timeago_es(self):
         locale = 'es'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "justo ahora")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "hace 10 segundos")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "hace 1 minuto")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "hace 3 minutos")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "hace 1 hora")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "hace 2 horas")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "hace 1 día")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "hace 4 días")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "hace 1 semana")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "hace 4 semanas")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "hace 1 mes")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "hace 3 meses")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "hace 1 año")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "hace 2 años")
 
 
     def test_timeago_eu(self):
         locale = 'eu'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "orain")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "duela 10 segundu")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "duela minutu 1")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "duela 3 minutu")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "duela ordu 1")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "duela 2 ordu")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "duela egun 1")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "duela 4 egun")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "duela aste 1")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "duela 4 aste")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "duela hillabete 1")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "duela 3 hillabete")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "duela urte 1")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "duela 2 urte")
 
 
     def test_timeago_fi(self):
         locale = 'fi'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "juuri äsken")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 sekuntia sitten")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "minuutti sitten")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 minuuttia sitten")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "tunti sitten")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 tuntia sitten")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "päivä sitten")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 päivää sitten")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "viikko sitten")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 viikkoa sitten")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "kuukausi sitten")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 kuukautta sitten")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "vuosi sitten")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 vuotta sitten")
 
 
     def test_timeago_fr(self):
         locale = 'fr'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "à l'instant")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "il y a 10 secondes")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "il y a 1 minute")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "il y a 3 minutes")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "il y a 1 heure")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "il y a 2 heures")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "il y a 1 jour")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "il y a 4 jours")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "il y a 1 semaine")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "il y a 4 semaines")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "il y a 1 mois")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "il y a 3 mois")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "il y a 1 an")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "il y a 2 ans")
 
 
     def test_timeago_gl(self):
         locale = 'gl'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "xusto agora")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "hai 10 segundos")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "hai 1 minuto")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "hai 3 minutos")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "hai 1 hora")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "hai 2 horas")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "hai 1 día")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "hai 4 días")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "hai 1 semana")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "hai 4 semanas")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "hai 1 mes")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "hai 3 meses")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "hai 1 ano")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "hai 2 anos")
 
 
     def test_timeago_he(self):
         locale = 'he'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "זה עתה")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "לפני 10 שניות")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "לפני דקה")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "לפני 3 דקות")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "לפני שעה")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "לפני 2 שעות")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "אתמול")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "לפני 4 ימים")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "לפני שבוע")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "לפני 4 שבועות")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "לפני חודש")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "לפני 3 חודשים")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "לפני שנה")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "לפני 2 שנים")
 
 
     def test_timeago_hu(self):
         locale = 'hu'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "éppen most")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 másodperce")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 perce")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 perce")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 órája")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 órája")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 napja")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 napja")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 hete")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 hete")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 hónapja")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 hónapja")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 éve")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 éve")
 
 
     def test_timeago_in_ID(self):
         locale = 'in_ID'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "baru saja")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 detik yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 menit yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 menit yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 jam yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 jam yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 hari yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 hari yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 minggu yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 minggu yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 bulan yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 bulan yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 tahun yang lalu")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 tahun yang lalu")
 
 
     def test_timeago_it(self):
         locale = 'it'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "poco fa")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 secondi fa")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "un minuto fa")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 minuti fa")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "un'ora fa")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 ore fa")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "un giorno fa")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 giorni fa")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "una settimana fa")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 settimane fa")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "un mese fa")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 mesi fa")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "un anno fa")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 anni fa")
 
 
     def test_timeago_ko(self):
         locale = 'ko'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "방금")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10초 전")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1분 전")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3분 전")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1시간 전")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2시간 전")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1일 전")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4일 전")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1주일 전")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4주일 전")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1개월 전")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3개월 전")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1년 전")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2년 전")
 
 
     def test_timeago_ml(self):
         locale = 'ml'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "ഇപ്പോള്‍")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 സെക്കന്റ്‌കള്‍ക്ക് മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 മിനിറ്റിനു മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 മിനിറ്റുകള്‍ക്ക് മുന്‍പ")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 മണിക്കൂറിനു മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 മണിക്കൂറുകള്‍ക്കു മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 ഒരു ദിവസം മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 ദിവസങ്ങള്‍ക് മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 ആഴ്ച മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 ആഴ്ചകള്‍ക്ക് മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 മാസത്തിനു മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 മാസങ്ങള്‍ക്ക് മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 വര്‍ഷത്തിനു  മുന്‍പ്")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 വര്‍ഷങ്ങള്‍ക്കു മുന്‍പ്")
 
 
     def test_timeago_my(self):
         locale = 'my'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "ယခုအတွင်း")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 စက္ကန့် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 မိနစ် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 မိနစ် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 နာရီ အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 နာရီ အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 ရက် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 ရက် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 ပတ် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 ပတ် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 လ အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 လ အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 နှစ် အကြာက")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 နှစ် အကြာက")
 
 
     def test_timeago_nb_NO(self):
         locale = 'nb_NO'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "akkurat nå")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 sekunder siden")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 minutt siden")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 minutter siden")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 time siden")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 timer siden")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 dag siden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 dager siden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 uke siden")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 uker siden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 måned siden")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 måneder siden")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 år siden")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 år siden")
 
 
     def test_timeago_nl(self):
         locale = 'nl'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "recent")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 seconden geleden")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 minuut geleden")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 minuten geleden")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 uur geleden")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 uren geleden")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 dag geleden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 dagen geleden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 week geleden")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 weken geleden")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 maand geleden")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 maanden geleden")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 jaar geleden")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 jaren geleden")
 
 
     def test_timeago_nn_NO(self):
         locale = 'nn_NO'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "nett no")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 sekund sidan")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 minutt sidan")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 minutt sidan")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 time sidan")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 timar sidan")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 dag sidan")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 dagar sidan")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 veke sidan")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 veker sidan")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 månad sidan")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 månadar sidan")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 år sidan")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 år sidan")
 
@@ -1793,341 +1793,284 @@ class TestCase(unittest.TestCase):
 
     def test_timeago_pt_BR(self):
         locale = 'pt_BR'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "agora mesmo")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "há 10 segundos")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "há um minuto")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "há 3 minutos")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "há uma hora")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "há 2 horas")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "há um dia")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "há 4 dias")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "há uma semana")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "há 4 semanas")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "há um mês")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "há 3 meses")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "há um ano")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "há 2 anos")
 
 
     def test_timeago_ta(self):
         locale = 'ta'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "இப்போது")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 நொடிக்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 நிமிடத்திற்க்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 நிமிடத்திற்க்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 மணி நேரத்திற்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 மணி நேரத்திற்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 நாளுக்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 நாட்களுக்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 வாரத்திற்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 வாரங்களுக்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 மாதத்திற்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 மாதங்களுக்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 வருடத்திற்கு முன்")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 வருடங்களுக்கு முன்")
 
 
     def test_timeago_th(self):
         locale = 'th'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "เมื่อสักครู่นี้")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 วินาทีที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 นาทีที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 นาทีที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 ชั่วโมงที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 ชั่วโมงที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 วันที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 วันที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 อาทิตย์ที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 อาทิตย์ที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 เดือนที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 เดือนที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 ปีที่แล้ว")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 ปีที่แล้ว")
 
 
     def test_timeago_tr(self):
         locale = 'tr'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "az önce")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 saniye önce")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 dakika önce")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 dakika önce")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 saat önce")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 saat önce")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 gün önce")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 gün önce")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 hafta önce")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 hafta önce")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 ay önce")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 ay önce")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 yıl önce")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 yıl önce")
 
 
     def test_timeago_vi(self):
         locale = 'vi'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "vừa xong")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10 giây trước")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1 phút trước")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3 phút trước")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1 giờ trước")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2 giờ trước")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1 ngày trước")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4 ngày trước")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1 tuần trước")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4 tuần trước")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1 tháng trước")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3 tháng trước")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1 năm trước")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 năm trước")
 
 
     def test_timeago_zh_TW(self):
         locale = 'zh_TW'
-
+    
         date = datetime.datetime.now()
         now = date + datetime.timedelta(seconds=2)
         self.assertEqual(timeago.format(date, now, locale), "剛剛")
-
+    
         now = date + datetime.timedelta(seconds=10)
         self.assertEqual(timeago.format(date, now, locale), "10秒前")
-
+    
         now = date + datetime.timedelta(seconds=60)
         self.assertEqual(timeago.format(date, now, locale), "1分鐘前")
-
+    
         now = date + datetime.timedelta(seconds=60 * 3.4)
         self.assertEqual(timeago.format(date, now, locale), "3分鐘前")
-
+    
         now = date + datetime.timedelta(seconds=3600)
         self.assertEqual(timeago.format(date, now, locale), "1小時前")
-
+    
         now = date + datetime.timedelta(seconds=3600 * 2)
         self.assertEqual(timeago.format(date, now, locale), "2小時前")
-
+    
         now = date + datetime.timedelta(seconds=86400)
         self.assertEqual(timeago.format(date, now, locale), "1天前")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 4.5)
         self.assertEqual(timeago.format(date, now, locale), "4天前")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 7)
         self.assertEqual(timeago.format(date, now, locale), "1周前")
-
+    
         now = date + datetime.timedelta(seconds=2592000)
         self.assertEqual(timeago.format(date, now, locale), "4周前")
-
+    
         now = date + datetime.timedelta(seconds=86400 * 31)
         self.assertEqual(timeago.format(date, now, locale), "1月前")
-
+    
         now = date + datetime.timedelta(seconds=2592000 * 3.5)
         self.assertEqual(timeago.format(date, now, locale), "3月前")
-
+    
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "1年前")
-
+    
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2年前")
-
-    def test_timeago_uk(self):
-        locale = 'uk'
-        date = datetime.datetime.now()
-        now = date + datetime.timedelta(seconds=2)
-        self.assertEqual(timeago.format(date, now, locale), 'щойно')
-
-        now = date + datetime.timedelta(seconds=10)
-        self.assertEqual(timeago.format(date, now, locale), '10 секунд тому')
-
-        now = date + datetime.timedelta(seconds=12)
-        self.assertEqual(timeago.format(date, now, locale), '12 секунд тому')
-
-        now = date + datetime.timedelta(seconds=22)
-        self.assertEqual(timeago.format(date, now, locale), '22 секунди тому')
-
-        now = date + datetime.timedelta(seconds=60)
-        self.assertEqual(timeago.format(date, now, locale), 'хвилину тому')
-
-        now = date + datetime.timedelta(seconds=60 * 3.4)
-        self.assertEqual(timeago.format(date, now, locale), '3 хвилини тому')
-
-        now = date + datetime.timedelta(seconds=60 * 13)
-        self.assertEqual(timeago.format(date, now, locale), '13 хвилин тому')
-
-        now = date + datetime.timedelta(seconds=60 * 23)
-        self.assertEqual(timeago.format(date, now, locale), '23 хвилини тому')
-
-        now = date + datetime.timedelta(seconds=3600)
-        self.assertEqual(timeago.format(date, now, locale), 'годину тому')
-
-        now = date + datetime.timedelta(seconds=3600 * 2)
-        self.assertEqual(timeago.format(date, now, locale), '2 години тому')
-
-        now = date + datetime.timedelta(seconds=86400)
-        self.assertEqual(timeago.format(date, now, locale), 'вчора')
-
-        now = date + datetime.timedelta(seconds=86400 * 4.5)
-        self.assertEqual(timeago.format(date, now, locale), '4 дні тому')
-
-        now = date + datetime.timedelta(seconds=2592000)
-        self.assertEqual(timeago.format(date, now, locale), '4 тиждні тому')
-
-        now = date + datetime.timedelta(seconds=2592000 * 3.5)
-        self.assertEqual(timeago.format(date, now, locale), '3 місяці тому')
-
-        now = date + datetime.timedelta(seconds=31536000)
-        self.assertEqual(timeago.format(date, now, locale), 'рік тому')
-
-        now = date + datetime.timedelta(seconds=31536000 * 21.1)
-        self.assertEqual(timeago.format(date, now, locale), '21 рік тому')
-
-        now = date + datetime.timedelta(seconds=31536000 * 2.1)
-        self.assertEqual(timeago.format(date, now, locale), '2 роки тому')
-
-        now = date + datetime.timedelta(seconds=31536000 * 100)
-        self.assertEqual(timeago.format(date, now, locale), '100 років тому')
 
 if __name__ == '__main__':
     unittest.main()
