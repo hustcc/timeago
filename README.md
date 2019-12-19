@@ -77,6 +77,7 @@ Three parameters of method `format`:
 ## Locale
 
 At the time we're speaking, [following locale](src/timeago/locales) are available:
+ - `ar`
  - `bg`
  - `ca`
  - `da`
