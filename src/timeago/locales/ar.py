@@ -26,11 +26,6 @@ base = [
 
 def generate(row, y):
     def formatting(time):
-        '''
-        Uses the 3rd and 4th field of the list in every 2 entries -
-        the ones containing %s, if the diff ends with 2, 3 or 4 but
-        not with 12, 13 or 14.
-        '''
         if row % 2 == 0:
             return base[row][y]
 
