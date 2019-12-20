@@ -86,6 +86,7 @@ Locale
 
 At the time we're speaking, `following locale`_ are available:
 
+-  ``ar``
 -  ``bg``
 -  ``ca``
 -  ``da``
