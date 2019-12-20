@@ -120,6 +120,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``ta``
 -  ``th``
 -  ``tr``
+-  ``uk``
 -  ``vi``
 -  ``zh_CN``
 -  ``zh_TW``

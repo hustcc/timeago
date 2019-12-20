@@ -111,6 +111,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `ta`
  - `th`
  - `tr`
+ - `uk`
  - `vi`
  - `zh_CN`
  - `zh_TW`
