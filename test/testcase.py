@@ -2234,5 +2234,62 @@ class TestCase(unittest.TestCase):
         self.assertEqual(timeago.format(date, now, locale), 'خلال 100 سنة')
 
 
+    def test_timeago_uk(self):
+        locale = 'uk'
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), 'щойно')
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), '10 секунд тому')
+
+        now = date + datetime.timedelta(seconds=12)
+        self.assertEqual(timeago.format(date, now, locale), '12 секунд тому')
+
+        now = date + datetime.timedelta(seconds=22)
+        self.assertEqual(timeago.format(date, now, locale), '22 секунди тому')
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), 'хвилину тому')
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), '3 хвилини тому')
+
+        now = date + datetime.timedelta(seconds=60 * 13)
+        self.assertEqual(timeago.format(date, now, locale), '13 хвилин тому')
+
+        now = date + datetime.timedelta(seconds=60 * 23)
+        self.assertEqual(timeago.format(date, now, locale), '23 хвилини тому')
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), 'годину тому')
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), '2 години тому')
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), 'вчора')
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), '4 дні тому')
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), '4 тиждні тому')
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), '3 місяці тому')
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), 'рік тому')
+
+        now = date + datetime.timedelta(seconds=31536000 * 21.1)
+        self.assertEqual(timeago.format(date, now, locale), '21 рік тому')
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), '2 роки тому')
+
+        now = date + datetime.timedelta(seconds=31536000 * 100)
+        self.assertEqual(timeago.format(date, now, locale), '100 років тому')
+
 if __name__ == '__main__':
     unittest.main()
