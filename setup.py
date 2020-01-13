@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 def readme():
-    with open('README.rst') as f:
+    with open('README.rst',encoding='utf8') as f:
         return f.read()
 
 setup(name = 'timeago',
