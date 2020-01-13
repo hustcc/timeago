@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 from distutils.core import setup
+from io import open
 from setuptools import find_packages
 
+
 def readme():
-    with open('README.rst',encoding='utf8') as f:
+    with open('README.rst', encoding='utf8') as f:
         return f.read()
 
 setup(name = 'timeago',
-      version = '1.0.12',
+      version = '1.0.13',
       description = 'A very simple python library, used to format datetime with `*** time ago` statement. eg: "3 hours ago".',
       long_description = readme(),
       author = 'hustcc',
