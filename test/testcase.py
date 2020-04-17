@@ -2291,5 +2291,84 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=31536000 * 100)
         self.assertEqual(timeago.format(date, now, locale), '100 років тому')
 
+    def test_timeago_lt(self):
+        locale = 'lt'
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), 'ką tik')
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 10 sekundžių')
+
+        now = date + datetime.timedelta(seconds=12)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 12 sekundžių')
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 1 minutę')
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 3 minutes')
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 1 valandą')
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 2 valandas')
+
+        now = date + datetime.timedelta(seconds=3600 * 15)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 15 valandų')
+
+        now = date + datetime.timedelta(seconds=3600 * 20)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 20 valandų')
+
+        now = date + datetime.timedelta(seconds=3600 * 22)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 22 valandas')
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 1 dieną')
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 4 dienas')
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 4 savaites')
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 3 mėnesius')
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 1 metus')
+
+        now = date + datetime.timedelta(seconds=31536000 * 1.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 1 metus')
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 2 metus')
+
+        now = date + datetime.timedelta(seconds=31536000 * 10.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 10 metų')
+
+        now = date + datetime.timedelta(seconds=31536000 * 17.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 17 metų')
+
+        now = date + datetime.timedelta(seconds=31536000 * 20.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 20 metų')
+
+        now = date + datetime.timedelta(seconds=31536000 * 28.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 28 metus')
+
+        now = date + datetime.timedelta(seconds=31536000 * 103.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 103 metus')
+
+        now = date + datetime.timedelta(seconds=31536000 * 110.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 110 metų')
+
+        now = date + datetime.timedelta(seconds=31536000 * 111.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 111 metų')
+
+        now = date + datetime.timedelta(seconds=31536000 * 125.1)
+        self.assertEqual(timeago.format(date, now, locale), 'prieš 125 metus')
+
+
 if __name__ == '__main__':
     unittest.main()

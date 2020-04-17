@@ -99,6 +99,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `it`
  - `ja`
  - `ko`
+ - `lt`
  - `ml`
  - `my`
  - `nb_NO`
