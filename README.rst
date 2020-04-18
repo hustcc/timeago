@@ -108,6 +108,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``it``
 -  ``ja``
 -  ``ko``
+-  ``lt``
 -  ``ml``
 -  ``my``
 -  ``nb_NO``
