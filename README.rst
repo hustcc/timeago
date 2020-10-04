@@ -100,6 +100,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``fi``
 -  ``fr``
 -  ``gl``
+- ``guj_IN``
 -  ``he``
 -  ``hu``
 -  ``in_BG``

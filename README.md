@@ -91,6 +91,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `fi`
  - `fr`
  - `gl`
+ - `guj_IN`
  - `he`
  - `hu`
  - `in_BG`
