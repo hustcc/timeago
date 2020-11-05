@@ -57,7 +57,7 @@ def format(date, now=None, locale='en'):
     ago_in = 0
     if diff_seconds < 0:
         ago_in = 1  # date is later then now, is the time in future
-        diff_seconds *= -1  # chango to positive
+        diff_seconds *= -1  # change to positive
 
     tmp = 0
     i = 0
