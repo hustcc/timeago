@@ -9,7 +9,7 @@ def readme():
         return f.read()
 
 setup(name = 'timeago',
-      version = '1.0.14',
+      version = '1.0.15',
       description = 'A very simple python library, used to format datetime with `*** time ago` statement. eg: "3 hours ago".',
       long_description = readme(),
       author = 'hustcc',
