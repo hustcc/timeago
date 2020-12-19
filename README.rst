@@ -119,6 +119,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``pl``
 -  ``pt_PT``
 -  ``pt_BR``
+-  ``ro``
 -  ``ru``
 -  ``sv_SE``
 -  ``ta``

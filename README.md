@@ -110,6 +110,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `pl`
  - `pt_BR`
  - `pt_PT`
+ - `ro`
  - `ru`
  - `sv_SE`
  - `ta`

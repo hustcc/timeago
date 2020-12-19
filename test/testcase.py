@@ -2005,6 +2005,52 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 வருடங்களுக்கு முன்")
 
+    def test_timeago_ro(self):
+        locale = 'ro'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), "chiar acum")
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), "acum 10 secunde")
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), "acum un minut")
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), "acum 3 minute")
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), "acum o oră")
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), "acum 2 ore")
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), "acum o zi")
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), "acum 4 zile")
+
+        now = date + datetime.timedelta(seconds=86400 * 7)
+        self.assertEqual(timeago.format(date, now, locale), "acum o săptămână")
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), "acum 4 săptămâni")
+
+        now = date + datetime.timedelta(seconds=86400 * 31)
+        self.assertEqual(timeago.format(date, now, locale), "acum o lună")
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), "acum 3 luni")
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), "acum un an")
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), "acum 2 ani")
+
     def test_timeago_th(self):
         locale = 'th'
 
