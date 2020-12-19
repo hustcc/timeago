@@ -60,7 +60,7 @@ Usage & Example
    # input date, auto add time(0, 0, 0)
    print (timeago.format(datetime.date(2016, 5, 27), now))
 
-   # input datetime formated string
+   # input datetime formatted string
    print (timeago.format('2016-05-27 12:12:03', '2016-05-27 12:12:12')) # will print just now
 
    # inverse two parameters
@@ -75,10 +75,10 @@ only one API ``format``.
 
 Three parameters of method ``format``:
 
--  ``date``: the parameter which will be formated, must be instance
-   of ``datetime`` / ``timedelta`` or datetime formated string.
+-  ``date``: the parameter which will be formatted, must be instance
+   of ``datetime`` / ``timedelta`` or datetime formatted string.
 -  ``now``: reference time, must be instance of ``datetime`` or
-   datetime formated string.
+   datetime formatted string.
 -  ``locale``: the locale code, default ``en``.
 
 Locale
