@@ -106,6 +106,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``in_BG``
 -  ``in_HI``
 -  ``in_ID``
+-  ``is``
 -  ``it``
 -  ``ja``
 -  ``ko``
@@ -116,6 +117,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``nl``
 -  ``nn_NO``
 -  ``pl``
+-  ``pt_PT``
 -  ``pt_BR``
 -  ``ru``
 -  ``sv_SE``

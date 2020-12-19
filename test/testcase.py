@@ -1344,6 +1344,53 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2 tahun yang lalu")
 
+
+    def test_timeago_is(self):
+        locale = 'is'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), "rétt í þessu")
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 10 sekúndum")
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 1 mínútu")
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 3 mínútum")
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 1 klukkutíma")
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 2 klukkutímum")
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 1 degi")
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 4 dögum")
+
+        now = date + datetime.timedelta(seconds=86400 * 7)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 1 viku")
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 4 vikum")
+
+        now = date + datetime.timedelta(seconds=86400 * 31)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 1 mánuði")
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 3 mánuðum")
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 1 ári")
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), "fyrir 2 árum")
+
     def test_timeago_it(self):
         locale = 'it'
 
@@ -1862,6 +1909,52 @@ class TestCase(unittest.TestCase):
 
         now = date + datetime.timedelta(seconds=31536000)
         self.assertEqual(timeago.format(date, now, locale), "há um ano")
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), "há 2 anos")
+
+    def test_timeago_pt_PT(self):
+        locale = 'pt_PT'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), "agora mesmo")
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), "há 10 segundos")
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), "há 1 minuto")
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), "há 3 minutos")
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), "há 1 hora")
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), "há 2 horas")
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), "há 1 dia")
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), "há 4 dias")
+
+        now = date + datetime.timedelta(seconds=86400 * 7)
+        self.assertEqual(timeago.format(date, now, locale), "há 1 semana")
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), "há 4 semanas")
+
+        now = date + datetime.timedelta(seconds=86400 * 31)
+        self.assertEqual(timeago.format(date, now, locale), "há 1 mês")
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), "há 3 meses")
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), "há 1 ano")
 
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "há 2 anos")
@@ -2415,6 +2508,9 @@ class TestCase(unittest.TestCase):
 
         now = date + datetime.timedelta(seconds=31536000 * 125.1)
         self.assertEqual(timeago.format(date, now, locale), 'prieš 125 metus')
+
+
+
 
 
 if __name__ == '__main__':

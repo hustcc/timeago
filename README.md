@@ -97,6 +97,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `in_BG`
  - `in_HI`
  - `in_ID`
+ - `is`
  - `it`
  - `ja`
  - `ko`
@@ -108,6 +109,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `nn_NO`
  - `pl`
  - `pt_BR`
+ - `pt_PT`
  - `ru`
  - `sv_SE`
  - `ta`
