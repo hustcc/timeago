@@ -112,6 +112,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `pt_PT`
  - `ro`
  - `ru`
+ - `sk`
  - `sv_SE`
  - `ta`
  - `th`
