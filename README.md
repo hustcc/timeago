@@ -107,6 +107,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `nb_NO`
  - `nl`
  - `nn_NO`
+ - `no`
  - `pl`
  - `pt_BR`
  - `pt_PT`

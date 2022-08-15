@@ -116,6 +116,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``nb_NO``
 -  ``nl``
 -  ``nn_NO``
+-  ``no``
 -  ``pl``
 -  ``pt_PT``
 -  ``pt_BR``
