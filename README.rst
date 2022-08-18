@@ -121,6 +121,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``pt_BR``
 -  ``ro``
 -  ``ru``
+-  ``sk``
 -  ``sv_SE``
 -  ``ta``
 -  ``th``
