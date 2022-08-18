@@ -36,4 +36,7 @@ setup(name = 'timeago',
       keywords = 'timeago, seconds ago, minutes ago, hours ago, just now',
       packages = find_packages('src'),
       package_dir = {'':'src'},
+      entry_points = {
+        'pyinstaller40': ['hook-dirs = timeago.__pyinstaller:get_hook_dirs']
+      }
 )
