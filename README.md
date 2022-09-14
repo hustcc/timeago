@@ -86,6 +86,7 @@ At the time we're speaking, [following locale](src/timeago/locales) are availabl
  - `en`
  - `en_short`
  - `es`
+ - `et`
  - `eu`
  - `fa_IR`
  - `fi`
