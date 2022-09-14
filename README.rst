@@ -95,6 +95,7 @@ At the time we're speaking, `following locale`_ are available:
 -  ``en``
 -  ``en_short``
 -  ``es``
+-  ``et``
 -  ``eu``
 -  ``fa_IR``
 -  ``fi``

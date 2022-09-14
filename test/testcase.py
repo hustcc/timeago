@@ -1021,6 +1021,8 @@ class TestCase(unittest.TestCase):
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "2yr ago")
 
+
+
     def test_timeago_es(self):
         locale = 'es'
 
@@ -1066,6 +1068,54 @@ class TestCase(unittest.TestCase):
 
         now = date + datetime.timedelta(seconds=31536000 * 2.1)
         self.assertEqual(timeago.format(date, now, locale), "hace 2 años")
+
+
+    def test_timeago_et(self):
+        locale = 'et'
+
+        date = datetime.datetime.now()
+        now = date + datetime.timedelta(seconds=2)
+        self.assertEqual(timeago.format(date, now, locale), "ልክ አሁን")
+
+        now = date + datetime.timedelta(seconds=10)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 10 ሰከንዶች በፊት")
+
+        now = date + datetime.timedelta(seconds=60)
+        self.assertEqual(timeago.format(date, now, locale), "ከ አንድ ደቂቃ በፊት")
+
+        now = date + datetime.timedelta(seconds=60 * 3.4)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 3 ደቂቃዎች በፊት")
+
+        now = date + datetime.timedelta(seconds=3600)
+        self.assertEqual(timeago.format(date, now, locale), "ከ አንድ ሰአት በፊት")
+
+        now = date + datetime.timedelta(seconds=3600 * 2)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 2 ሰዓታት በፊት")
+
+        now = date + datetime.timedelta(seconds=86400)
+        self.assertEqual(timeago.format(date, now, locale), "ከ አንድ ቀን በፊት")
+
+        now = date + datetime.timedelta(seconds=86400 * 4.5)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 4 ቀናት በፊት")
+
+        now = date + datetime.timedelta(seconds=86400 * 7)
+        self.assertEqual(timeago.format(date, now, locale), "ከ አንድ ሳምንት በፊት")
+
+        now = date + datetime.timedelta(seconds=2592000)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 4 ሳምንታት በፊት")
+
+        now = date + datetime.timedelta(seconds=86400 * 31)
+        self.assertEqual(timeago.format(date, now, locale), "ከ አንድ ወር በፊት")
+
+        now = date + datetime.timedelta(seconds=2592000 * 3.5)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 3 ወራት በፊት")
+
+        now = date + datetime.timedelta(seconds=31536000)
+        self.assertEqual(timeago.format(date, now, locale), "ከ አንድ ዓመት በፊት")
+
+        now = date + datetime.timedelta(seconds=31536000 * 2.1)
+        self.assertEqual(timeago.format(date, now, locale), "ከ 2 ዓመታት በፊት")
+
 
     def test_timeago_eu(self):
         locale = 'eu'
